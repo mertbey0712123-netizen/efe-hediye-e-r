@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efe'den Rabia'ya ❤️</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* YILDIZLAR */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:40px;
+    border-radius:25px;
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 30px rgba(255,255,255,0.2);
+    max-width:520px;
+    z-index:2;
+}
+
+.glow{
+    font-size:28px;
+    cursor:pointer;
+    animation:glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow{
+    from{text-shadow:0 0 5px #fff;}
+    to{text-shadow:0 0 20px #ff69b4;}
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+#poem,#special{
+    display:none;
+    margin-top:20px;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:12px;
+    opacity:0.7;
+}
+
+/* KALP PATLAMA */
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation:float 3s linear forwards;
+}
+@keyframes float{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-200px);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="intro">
+    <div class="glow" onclick="heartExplosion(event)">Rabia 💖</div>
+    <p id="count">Hazır mısın?</p>
+    <button onclick="start()">Hazırım ✨</button>
+</div>
+
+<div class="card" id="poem">
+    <h2>Efe'den Rabia'ya 💌</h2>
+    <p id="typing"></p>
+
+    <button onclick="showSpecial()">Bana Tıkla ❤️</button>
+    <button onclick="playMusic()">Müziği Aç 🎵</button>
+
+    <div id="special">
+        <p>
+        Evet biliyorum tartışıyoruz, yeri geliyor anlaşamıyoruz, kavga ediyoruz,
+        sonra günlerce konuşmuyoruz... <br><br>
+
+        Ama bugün Sevgililer Günü. <br>
+        Senin yanında olamasam da böyle küçük bir sürpriz yapmak istedim. <br><br>
+
+        Her şeyi tamamen ben yaptım.  
+        En ince detayına kadar ben uğraştım. <br><br>
+
+        Umarım mutlu olmuşsundur. <br><br>
+
+        Kusursuz değiliz...  
+        Ama sen benim vazgeçmek istemediğim tek insansın. ❤️ <br><br>
+
+        En sevdiğim aşkım Rabiam <3
+        </p>
+
+        <div class="footer">
+            14 Şubat 2026 ❤️ <br>
+            Bu site Rabia için özel kodlandı.
+        </div>
+    </div>
+</div>
+
+<audio id="bgMusic">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// YILDIZ ÜRET
+for(let i=0;i<150;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"vh";
+    star.sty
